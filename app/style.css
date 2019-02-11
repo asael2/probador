@@ -9,13 +9,13 @@ body {overflow: auto; overflow-y: auto;
     margin: 0px;}
 #jeeFaceFilterCanvas {
     z-index: 10;
-    position: absolute; 
+    position: relative; 
     max-height: 100%;
     max-width: 100%;
     left: 50%;
     top: 50%;
     width: 100vmin;
-    transform: translate(-50%, -50%) rotateY(180deg);
+    transform: translate(-50%, 0%) rotateY(180deg);
 } 
 
 @media (max-width: 787px) {
