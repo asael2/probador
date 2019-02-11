@@ -102,6 +102,7 @@ function init_threeScene(spec) {
             branchesMesh.scale.multiplyScalar(0.0065);
             branchesMesh.frustumCulled = false;
             branchesMesh.renderOrder = 10000;
+            branchesMesh.rotation.x += 0.1;
         }
     );
 

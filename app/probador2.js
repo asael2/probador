@@ -71,7 +71,7 @@ function init_threeScene(spec) {
             const mat = new THREE.MeshLambertMaterial({
                 map: new THREE.TextureLoader().load('./models/glasses/texture_mp.jpg'),
                 transparent: true,
-                opacity: 0.78,  
+                opacity: 0.68,  
                 color:     0x996633, 
                 specular:  0x050505,
                 shininess: 100,
@@ -82,7 +82,7 @@ function init_threeScene(spec) {
             //   });
 
             lensesMesh = new THREE.Mesh(geometry, mat);
-            lensesMesh.scale.multiplyScalar(0.0067);
+            lensesMesh.scale.multiplyScalar(0.0066);
             lensesMesh.frustumCulled = false;
             lensesMesh.renderOrder = 10000;
           
@@ -182,24 +182,6 @@ function init_threeScene(spec) {
 
     threeStuffs.scene.add(dirLight)
 } // end init_threeScene()
-
-function animateFlyBees(mesh, theta, sign) {
-    let count = 0;
-    setInterval(() => {
-        count += 1;
-        const x = mesh.position.x;
-        const z = mesh.position.z;
-        const y = mesh.position.y;
-
-        mesh.position.set(
-            (x * Math.cos(theta) + z * Math.sin(theta)),
-            (y * Math.cos(theta) + x * Math.sin(theta))*0.96 + 0.05,
-            (z * Math.cos(theta) - x * Math.sin(theta)) //(z * Math.cos(0.03*theta) - x * Math.sin(0.03*theta)*theta)
-        );
-        mesh.rotation.set(-(x * Math.cos(theta) + z * Math.sin(theta))*sign, -(y * Math.cos(theta) + z * Math.sin(theta))*sign, -(z * Math.cos(theta) - x * Math.sin(theta))*sign);
-        // mesh.rotation._y = Math.sin(Math.random()*2*Math.PI*100)
-    }, 16)
-}
 
 //launched by body.onload() :
 function main() {
